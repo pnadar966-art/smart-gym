@@ -227,7 +227,7 @@ async function startServer() {
 
     // Start Express
     const server = app.listen(
-      PORT,
+      PORT,'0.0.0.0',
       () => {
 
         console.log(
