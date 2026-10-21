@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workout Plans - Smart Gym Management System</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="layoutRoot"></div>
+
+<div class="modal fade" id="workoutModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title" id="workoutModalTitle">Create Workout Plan</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <form id="workoutForm">
+        <div class="modal-body">
+          <div class="row g-3 mb-3">
+            <div class="col-md-6"><label class="form-label">Plan Name</label><input type="text" class="form-control" id="wPlanName" required></div>
+            <div class="col-md-3"><label class="form-label">Member</label><select class="form-select" id="wMember" required></select></div>
+            <div class="col-md-3"><label class="form-label">Trainer</label><select class="form-select" id="wTrainer" required></select></div>
+            <div class="col-md-3"><label class="form-label">Goal</label>
+              <select class="form-select" id="wGoal" required>
+                <option value="Weight Loss">Weight Loss</option><option value="Muscle Gain">Muscle Gain</option>
+                <option value="General Fitness">General Fitness</option><option value="Strength">Strength</option><option value="Endurance">Endurance</option>
+              </select></div>
+            <div class="col-md-3"><label class="form-label">Difficulty</label>
+              <select class="form-select" id="wDifficulty"><option value="Beginner">Beginner</option><option value="Intermediate">Intermediate</option><option value="Advanced">Advanced</option></select></div>
+            <div class="col-md-3"><label class="form-label">Start Date</label><input type="date" class="form-control" id="wStartDate" required></div>
+            <div class="col-md-3"><label class="form-label">End Date</label><input type="date" class="form-control" id="wEndDate" required></div>
+          </div>
+
+          <h6 class="fw-bold">Exercises</h6>
+          <div id="exercisesContainer"></div>
+          <button type="button" class="btn btn-outline-secondary btn-sm" onclick="addExerciseRow()"><i class="bi bi-plus-lg"></i> Add Exercise</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary-custom">Save Workout Plan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/workouts.js"></script>
+</body>
+</html>

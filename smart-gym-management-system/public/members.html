@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Members - Smart Gym Management System</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="layoutRoot"></div>
+
+<div class="modal fade" id="memberModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="memberModalTitle">Add Member</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <form id="memberForm">
+        <div class="modal-body">
+          <input type="hidden" id="memberId">
+          <div class="row g-3">
+            <div class="col-md-6"><label class="form-label">Full Name</label><input type="text" class="form-control" id="mFullName" required></div>
+            <div class="col-md-3"><label class="form-label">Gender</label>
+              <select class="form-select" id="mGender" required><option value="">Select</option><option value="Male">Male</option><option value="Female">Female</option><option value="Other">Other</option></select></div>
+            <div class="col-md-3"><label class="form-label">Date of Birth</label><input type="date" class="form-control" id="mDob" required></div>
+            <div class="col-md-6"><label class="form-label">Email</label><input type="email" class="form-control" id="mEmail" required></div>
+            <div class="col-md-6"><label class="form-label">Phone</label><input type="text" class="form-control" id="mPhone" required></div>
+            <div class="col-md-12"><label class="form-label">Address</label><textarea class="form-control" id="mAddress" rows="2" required></textarea></div>
+            <div class="col-md-6"><label class="form-label">Emergency Contact</label><input type="text" class="form-control" id="mEmergencyContact" required></div>
+            <div class="col-md-6"><label class="form-label">Joining Date</label><input type="date" class="form-control" id="mJoiningDate" required></div>
+            <div class="col-md-4"><label class="form-label">Membership Plan</label><select class="form-select" id="mPlan" required></select></div>
+            <div class="col-md-4"><label class="form-label">Start Date</label><input type="date" class="form-control" id="mStartDate" required></div>
+            <div class="col-md-4"><label class="form-label">End Date</label><input type="date" class="form-control" id="mEndDate" required></div>
+            <div class="col-md-6"><label class="form-label">Assigned Trainer</label><select class="form-select" id="mTrainer"><option value="">None</option></select></div>
+            <div class="col-md-3"><label class="form-label">Weight (kg)</label><input type="number" step="0.1" class="form-control" id="mWeight"></div>
+            <div class="col-md-3"><label class="form-label">Height (cm)</label><input type="number" step="0.1" class="form-control" id="mHeight"></div>
+            <div class="col-md-6"><label class="form-label">Fitness Goal</label>
+              <select class="form-select" id="mFitnessGoal">
+                <option value="General Fitness">General Fitness</option>
+                <option value="Weight Loss">Weight Loss</option>
+                <option value="Muscle Gain">Muscle Gain</option>
+                <option value="Strength">Strength</option>
+                <option value="Endurance">Endurance</option>
+              </select></div>
+            <div class="col-md-6"><label class="form-label">Status</label>
+              <select class="form-select" id="mStatus"><option value="Active">Active</option><option value="Inactive">Inactive</option><option value="Expired">Expired</option></select></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary-custom">Save Member</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/members.js"></script>
+</body>
+</html>

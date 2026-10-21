@@ -1,0 +1,311 @@
+:root {
+  --primary: #1e3a5f;
+  --primary-dark: #14283f;
+  --accent: #ff6b35;
+  --accent2: #22c55e;
+  --sidebar-width: 250px;
+  --light-bg: #f3f5f9;
+}
+
+body {
+  background-color: var(--light-bg);
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* ---------- LOGIN / LANDING PAGE ---------- */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+}
+
+.login-hero {
+  flex: 1.2;
+  position: relative;
+  background: linear-gradient(135deg, rgba(20,40,63,0.85), rgba(30,58,95,0.75)),
+              url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200') center/cover no-repeat;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+}
+
+.login-hero h1 {
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.login-hero p.tagline {
+  font-size: 18px;
+  opacity: 0.9;
+  max-width: 480px;
+}
+
+.login-form-panel {
+  flex: 1;
+  min-width: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 40px;
+}
+
+.login-form-inner {
+  width: 100%;
+  max-width: 380px;
+}
+
+.login-form-inner .logo-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 900px) {
+  .login-page { flex-direction: column; }
+  .login-hero { padding: 40px 24px; }
+  .login-hero h1 { font-size: 30px; }
+}
+
+/* ---------- APP LAYOUT ---------- */
+.app-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--primary-dark);
+  color: #fff;
+  overflow-y: auto;
+  z-index: 1030;
+  transition: transform 0.3s ease;
+}
+
+.app-sidebar .brand {
+  padding: 22px 18px;
+  font-size: 19px;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-sidebar .nav-link {
+  color: rgba(255,255,255,0.75);
+  padding: 11px 20px;
+  font-size: 14px;
+  border-left: 3px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-sidebar .nav-link:hover {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+}
+
+.app-sidebar .nav-link.active {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border-left-color: var(--accent);
+  font-weight: 600;
+}
+
+.app-main {
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+}
+
+.app-header {
+  background: #fff;
+  border-bottom: 1px solid #e3e6eb;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+.app-content {
+  padding: 24px;
+}
+
+/* ---------- STAT CARDS ---------- */
+.stat-card {
+  border: none;
+  border-radius: 14px;
+  padding: 20px;
+  color: #fff;
+  height: 100%;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.stat-card .stat-icon { font-size: 24px; opacity: 0.85; }
+.stat-card .stat-value { font-size: 24px; font-weight: 700; }
+.stat-card .stat-label { font-size: 12px; opacity: 0.9; }
+
+.bg-c1 { background: linear-gradient(135deg,#1e3a5f,#2c5282); }
+.bg-c2 { background: linear-gradient(135deg,#2f855a,#38a169); }
+.bg-c3 { background: linear-gradient(135deg,#c05621,#dd6b20); }
+.bg-c4 { background: linear-gradient(135deg,#805ad5,#9f7aea); }
+.bg-c5 { background: linear-gradient(135deg,#c53030,#e53e3e); }
+.bg-c6 { background: linear-gradient(135deg,#2b6cb0,#3182ce); }
+.bg-c7 { background: linear-gradient(135deg,#0891b2,#22d3ee); }
+.bg-c8 { background: linear-gradient(135deg,#b7791f,#d69e2e); }
+
+.content-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border: 1px solid #eceff3;
+}
+
+.page-title { font-size: 22px; font-weight: 700; color: var(--primary-dark); }
+
+.table thead th {
+  background: #f0f3f7;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #4a5568;
+  border-bottom: none;
+  white-space: nowrap;
+}
+.table td, .table th { vertical-align: middle; font-size: 13.5px; }
+
+/* ---------- STATUS BADGES ---------- */
+.badge-status-active, .badge-status-available, .badge-status-present, .badge-status-paid { background: #38a169; }
+.badge-status-inactive { background: #a0aec0; }
+.badge-status-expired, .badge-status-absent, .badge-status-failed, .badge-status-damaged { background: #e53e3e; }
+.badge-status-inuse, .badge-status-pending, .badge-status-expiringsoon, .badge-status-maintenancerequired { background: #dd6b20; }
+
+/* ---------- BUTTONS ---------- */
+.btn-primary-custom { background: var(--primary); border-color: var(--primary); color: #fff; }
+.btn-primary-custom:hover { background: var(--primary-dark); border-color: var(--primary-dark); color: #fff; }
+.btn-accent { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn-accent:hover { background: #e5572b; border-color: #e5572b; color: #fff; }
+
+.search-bar { max-width: 320px; }
+
+@media (max-width: 992px) {
+  .app-sidebar { transform: translateX(-100%); }
+  .app-sidebar.show { transform: translateX(0); }
+  .app-main { margin-left: 0; }
+}
+
+/* ---------- PROFILE CARD ---------- */
+.profile-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.profile-card img.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  margin-bottom: 12px;
+}
+
+.metric-box {
+  background: #f7f9fc;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+}
+.metric-box .metric-value { font-size: 20px; font-weight: 700; color: var(--primary-dark); }
+.metric-box .metric-label { font-size: 11.5px; color: #718096; text-transform: uppercase; }
+
+/* ---------- PLAN CARDS ---------- */
+.plan-card {
+  border-radius: 16px;
+  padding: 26px;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  height: 100%;
+  border-top: 4px solid var(--accent);
+  transition: transform 0.15s ease;
+}
+.plan-card:hover { transform: translateY(-4px); }
+.plan-card .plan-price { font-size: 32px; font-weight: 800; color: var(--primary-dark); }
+.plan-card ul { list-style: none; padding-left: 0; }
+.plan-card ul li { padding: 4px 0; font-size: 14px; }
+.plan-card ul li::before { content: "\2713"; color: var(--accent2); font-weight: 700; margin-right: 8px; }
+
+/* ---------- EQUIPMENT CARDS ---------- */
+.equipment-card {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  height: 100%;
+}
+.equipment-card img { width: 100%; height: 140px; object-fit: cover; }
+.equipment-card .equipment-body { padding: 14px; }
+
+/* ---------- EXERCISE CARDS ---------- */
+.exercise-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 12px;
+}
+.exercise-card img { width: 100%; height: 110px; object-fit: cover; }
+.exercise-card .exercise-body { padding: 12px; }
+
+/* ---------- PROGRESS BAR (BMI etc) ---------- */
+.bmi-bar-wrap { height: 10px; border-radius: 6px; background: #e2e8f0; overflow: hidden; }
+.bmi-bar-fill { height: 100%; border-radius: 6px; }
+
+/* ---------- RECEIPT PRINT ---------- */
+.receipt-box {
+  max-width: 480px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 30px;
+  background: #fff;
+}
+.receipt-box .receipt-header { text-align: center; border-bottom: 2px dashed #ccc; padding-bottom: 16px; margin-bottom: 16px; }
+.receipt-box table td { padding: 6px 4px; font-size: 14px; }
+
+@media print {
+  .no-print { display: none !important; }
+  .app-sidebar, .app-header { display: none !important; }
+  .app-main { margin-left: 0 !important; }
+  body { background: #fff !important; }
+}
+
+.spinner-wrap { text-align: center; padding: 40px; color: #888; }
+
+.report-tabs .nav-link { color: #4a5568; font-weight: 500; }
+.report-tabs .nav-link.active { color: var(--primary); font-weight: 700; border-bottom: 3px solid var(--accent); }
+
+.alert-card {
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.alert-card.warning { background: #fffaf0; border: 1px solid #fbd38d; }
+.alert-card.danger { background: #fff5f5; border: 1px solid #feb2b2; }
